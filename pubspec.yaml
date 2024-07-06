@@ -1,7 +1,7 @@
 name: ro_password_generator
-description: "A new Flutter package project."
+description: "A flutter package that randomly generates password with digits, lowcase characters, upcase characters and special characters."
 version: 0.0.1
-homepage:
+homepage: https://github.com/HuyVoWakumo/ro_password_generator
 
 environment:
   sdk: '>=3.4.3 <4.0.0'

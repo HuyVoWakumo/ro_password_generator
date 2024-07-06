@@ -11,29 +11,26 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
 
-## Features
+# RoPasswordGenerator
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+A flutter package that randomly generates password with digits, lowcase characters, upcase characters and special characters.
 
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
 ```dart
-const like = 'sample';
+final password = RoPasswordGenerator.generate(length: 12, includeUpcaseChars: true, excludeSimiliarChars: false);
 ```
 
-## Additional information
+## Installation 
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+1. Add the latest version of package to your pubspec.yaml (and run`dart pub get`):
+```yaml
+dependencies:
+  ro_password_generator: ^0.0.1
+```
+2. Import the package and use it in your Flutter App.
+```dart
+import 'package:ro_password_generator/ro_password_generator.dart';
+```
