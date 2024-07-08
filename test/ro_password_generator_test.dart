@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'dart:core';
+import 'dart:math';
 import 'package:ro_password_generator/ro_password_generator.dart';
 
 void main() {
@@ -40,6 +41,36 @@ void main() {
       debugPrint(password);
       expect(password, '');
     });
+
+    test('Fuzzing testing', () {
+      final random = Random();
+      int loop = 20;
+      for (int i = 0; i < loop; i++) {
+        try {
+          final length = random.nextInt(20);
+          final includeDigits = random.nextBool();
+          final includeLowcaseChars = random.nextBool();
+          final includeUpcaseChars = random.nextBool();
+          final includeSpecialChars = random.nextBool();
+          final excludeSimiliarChars = random.nextBool();
+
+          debugPrint(RoPasswordGenerator.generate(
+            length : length, 
+            includeDigits : includeDigits, 
+            includeLowcaseChars : includeLowcaseChars, 
+            includeUpcaseChars : includeUpcaseChars, 
+            includeSpecialChars : includeSpecialChars, 
+            excludeSimiliarChars : excludeSimiliarChars
+          ));
+
+        } catch (e) { 
+          debugPrint(e.toString());
+        }
+      }
+
+    });
+
+    
     
   });
 }
