@@ -20,6 +20,7 @@ A flutter package that randomly generates password with digits, lowcase characte
 ## Usage
 
 ```dart
+// Generate a password with length 12, include digits, lowcase characters, upcase characters and allow similiar characters
 final password = RoPasswordGenerator.generate(length: 12, includeUpcaseChars: true, excludeSimiliarChars: false);
 ```
 
@@ -34,3 +35,25 @@ dependencies:
 ```dart
 import 'package:ro_password_generator/ro_password_generator.dart';
 ```
+## API Reference
+
+### `PasswordGenerator.generate`
+
+```dart
+static String generate({
+  int length = 8, 
+  bool includeDigits = true, 
+  bool includeLowcaseChars = true,
+  bool includeUpcaseChars = false,
+  bool includeSpecialChars = false,
+  bool excludeSimiliarChars = true,
+}) 
+```
+
+- `length`: The length of the password (default: `8`)
+- `includeDigits`: include digits in the password (default: `true`)
+- `includeLowcaseChars`: include lowcase characters in the password (default: `true`)
+- `includeUpcaseChars`: include upcase characters in the password (default: `false`)
+- `includeSpecialChars`: include special characters in the password (default: `false`)
+- `excludeSimiliarChars`: exclude similar characters (default: `false`)
+- Returns: A randomly generated password
